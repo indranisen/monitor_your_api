@@ -27,4 +27,13 @@ def return_api_endpoint(app):
 def get_request(app):
     endpoint = api_endpoint+get_api_key('google-map-directions')
     actual_response = requests.get(endpoint)
-    return actual_response.status_code, actual_response.content
+    return _return_response_status_code(actual_response), _return_response_headers(actual_response), _return_response_content(actual_response)
+
+def _return_response_headers(response_object):
+    return response_object.headers
+
+def _return_response_status_code(response_object):
+    return response_object.status_code
+
+def _return_response_content(response_object):
+    return response_object.content
