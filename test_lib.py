@@ -23,3 +23,8 @@ def get_api_key(app):
 
 def return_api_endpoint(app):
     return api_endpoint+get_api_key('google-map-directions')
+
+def get_request(app):
+    endpoint = api_endpoint+get_api_key('google-map-directions')
+    actual_response = requests.get(endpoint)
+    return actual_response.status_code, actual_response.content
