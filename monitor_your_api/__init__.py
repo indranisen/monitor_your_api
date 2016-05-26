@@ -1,2 +1,2 @@
-from resource_request import *
+import resource_request
 import api_details
