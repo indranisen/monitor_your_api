@@ -1,2 +1,0 @@
-import resource_request
-import api_details
